@@ -5,7 +5,7 @@ import { getLoginToken } from "../api-calls/getLoginToken"
 import { adminDetails } from "../data/userDetails"
 import { log } from "console"
 
-test("My account useing cookie injection", async) ({page}) => {
+test("My account useing cookie injection", async ({page}) => {
     const loginToken = await getLoginToken()
     console.warn({loginToken})
     const myAccount = new MyAccountPage(page)
@@ -15,7 +15,7 @@ test("My account useing cookie injection", async) ({page}) => {
     }, [loginToken])
     await myAccount.visit()
     await myAccount.waitForPageHeading()
-}
+})
 
 // test("My Account using cookie injection and mocking network", async ({page}) => {
 //     const loginToken = await getLoginToken(adminDetails.username, adminDetails.password)
@@ -36,4 +36,3 @@ test("My account useing cookie injection", async) ({page}) => {
     // await myAccount.visit()
     // await myAccount.waitForPageHeading()
     // await myAccount.waitForErrorMessage()
-})
