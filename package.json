@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test --headed ",
-    "test:ci": "playright test"
+    "test:ci": "playwright test"
   },
   "keywords": [],
   "author": "",
